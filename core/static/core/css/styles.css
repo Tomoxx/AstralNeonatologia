@@ -1,0 +1,36 @@
+.navbar {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #eefaff;
+    }
+
+.inicio{
+    background: url("/static/core/img/Condominios.jpg") 50% 0 no-repeat fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: #0a0908;
+    width: 100vw;
+    height: 100vh;;
+}
+
+
+.navbar-custom{
+    background-color: #1b4d89;
+}
+
+.navbar-custom .nav-brand,
+.navbar-custom .nav-text,
+.navbar-custom .nav-link{
+    color: #eefaff;
+}
+
+.search{
+    width: auto;
+}
+
+.searchInp{
+    width: 50vw;
+}

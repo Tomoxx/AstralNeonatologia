@@ -1,0 +1,38 @@
+{% extends 'core/correspondencia.html' %}
+{%load static%}
+{%block title%}
+Residencia
+{%endblock%}
+
+{%block content%}
+    <br>
+    <div class="search">
+    <form method="get">
+    <div class="mb-3">
+    <label for="numeroResidencia" class="form-label">Numero de Residencia</label>
+    <input type="search" class="form-control searchInp" id="numeroResidencia" name="search">
+    </div>
+    <button type="submit" class="btn btn-primary">Filtrar</button>
+    </form>
+    </div>
+    <br>
+    <div class="col-md-8">
+        <table class="table table-bordered border-primary" >
+        <thead>
+            <tr>
+            <th scope="col">Numero de Residencia</th>
+            <th scope="col">Dueño</th>
+            <th scope="col">Telefono</th>
+            </tr>
+        </thead>
+        {%for i in residencia%}
+        <tbody>
+            <tr>
+            <td scope"col">{{i.number}} </td>
+            <td scope"col">{{i.dueno}} </td>
+            <td scope"col">{{i.telefono}} </td>
+        {% endfor %}
+        </tbody>
+        </table>
+    </div>
+{%endblock %}

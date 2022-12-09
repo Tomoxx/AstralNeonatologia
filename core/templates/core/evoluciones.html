@@ -1,0 +1,45 @@
+{% extends 'core/inicio.html' %}
+{%load static%}
+{%block title%}
+Correspondencia
+{%endblock%}
+
+{%block content%}
+    <br>
+    <div class="search">
+    <form method="get">
+        <div class="mb-3">
+        <label for="numeroResidencia" class="form-label">Numero de Residencia</label>
+        <input type="search" class="form-control searchInp" id="numeroResidencia" name="search">
+        </div>
+        <button type="submit" class="btn btn-primary">Filtrar</button>
+    </form>
+    </div>
+    <br>
+    <div class="col-md-8">
+        <table class="table table-bordered border-primary" >
+            <thead>
+                <tr>
+                    <th scope="col">Numero de Residencia</th> 
+                    <th scope="col">Fecha recepción</th>
+                    <th scope="col">Conserje</th>
+                    <th scope="col">Remitente</th>
+                    <th scope="col">Destinatario</th>
+                    <th scope="col">Estado</th>
+                    
+                </tr>
+            </thead>
+        {%for i in correspondencia%}
+            <tbody>
+                <tr>
+                    <td scope"col">{{i.residencia}} </td>
+                    <td scope"col">{{i.fechaRecibida}} </td>
+                    <td scope"col">{{i.conserje}} </td>
+                    <td scope"col">{{i.remitente}} </td>
+                    <td scope"col">{{i.destinatario}} </td>
+                    <td scope"col">{{i.estado}} </td>
+        {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{%endblock %}
