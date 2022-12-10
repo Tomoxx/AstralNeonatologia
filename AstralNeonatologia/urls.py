@@ -20,4 +20,5 @@ from core import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.inicio,name="inicio"),
+    path('evoluciones/',views.evoluciones,name="evoluciones"),
 ]
