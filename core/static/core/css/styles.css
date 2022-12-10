@@ -3,15 +3,14 @@
 }
 
 body {
-    background-color: #eefaff;
+    background-color: white;
     }
 
 .inicio{
-    background: url("/static/core/img/Condominios.jpg") 50% 0 no-repeat fixed;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    background-color: #0a0908;
+    background-color: white;
     width: 100vw;
     height: 100vh;;
 }
@@ -33,4 +32,7 @@ body {
 
 .searchInp{
     width: 50vw;
+}
+#letra{
+    font-family: Arial, Helvetica, sans-serif;
 }

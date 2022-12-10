@@ -11,14 +11,14 @@
     {% comment %} <link rel="stylesheet" href="{% static 'core/js/javascript.css '%}">  {% endcomment %}
 </head>
 <body>
-    {% comment %} <img src="{% static 'core/img/images.png'%}">  {% endcomment %}
+    {% comment %}   {% endcomment %}
     
     {%block header%}
     {%endblock%}
     <nav class="navbar fixed-top navbar-expand-lg navbar-custom">
         <div class="container-fluid">
             <a id="navbar" class="navbar-brand" href='{% url 'inicio' %}'>
-                <img width=70vw height= 70vw src="{% static 'core/img/LogoPagma.png' %}" alt="LogoPagma">
+                <img width=70vw height= 70vw src="{% static 'core/img/logo.png' %}" alt="LogoPagma">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -31,14 +31,12 @@
                         <a class="nav-link" href='{% url 'inicio' %}'>Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href=''>Residencias</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href=''>Correspondencia</a>
+                        <a  class="nav-link"href="">Iniciar Sesión</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href='{%url 'admin:index'%}'>Administrar</a>
                     </li>
+ 
                 </ul>
             </div>
         </div>

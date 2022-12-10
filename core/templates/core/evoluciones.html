@@ -9,7 +9,7 @@ Correspondencia
     <div class="search">
     <form method="get">
         <div class="mb-3">
-        <label for="numeroResidencia" class="form-label">Numero de Residencia</label>
+        <label for="numeroResidencia" class="form-label">Recien Nacido</label>
         <input type="search" class="form-control searchInp" id="numeroResidencia" name="search">
         </div>
         <button type="submit" class="btn btn-primary">Filtrar</button>
@@ -20,24 +20,26 @@ Correspondencia
         <table class="table table-bordered border-primary" >
             <thead>
                 <tr>
-                    <th scope="col">Numero de Residencia</th> 
-                    <th scope="col">Fecha recepción</th>
-                    <th scope="col">Conserje</th>
-                    <th scope="col">Remitente</th>
-                    <th scope="col">Destinatario</th>
-                    <th scope="col">Estado</th>
+                    <th scope="col">Nombre</th> 
+                    <th scope="col">Paterno</th>
+                    <th scope="col">Materno</th>
+                    <th scope="col">Fecha Nacimiento</th>
+                    <th scope="col">Dirección</th>
+                    <th scope="col">Estado de alta</th>
+                    <th scope="col">Padres</th>
                     
                 </tr>
             </thead>
-        {%for i in correspondencia%}
+        {%for i in reciennacido%}
             <tbody>
                 <tr>
-                    <td scope"col">{{i.residencia}} </td>
-                    <td scope"col">{{i.fechaRecibida}} </td>
-                    <td scope"col">{{i.conserje}} </td>
-                    <td scope"col">{{i.remitente}} </td>
-                    <td scope"col">{{i.destinatario}} </td>
-                    <td scope"col">{{i.estado}} </td>
+                    <td scope"col">{{i.nombre}} </td>
+                    <td scope"col">{{i.paterno}} </td>
+                    <td scope"col">{{i.materno}} </td>
+                    <td scope"col">{{i.fecha_nacimiento}} </td>
+                    <td scope"col">{{i.direccion}} </td>
+                    <td scope"col">{{i.alta}} </td>
+                    <td scope"col">{{i.padres}} </td>
         {% endfor %}
             </tbody>
         </table>
