@@ -57,35 +57,4 @@ Evoluciones
             </tbody>
         </table>
     </div>
-    <div class="col-md-8">
-        <table class="table table-bordered border-primary" >
-            <thead>
-                <tr>
-                    <th scope="col">Nombre</th> 
-                    <th scope="col">Apellidos</th>
-                    <th scope="col">Fecha Nacimiento</th>
-                    <th scope="col">Dirección</th>
-                    <th scope="col">Estado de alta</th>
-                    <th scope="col">Padres</th>
-                    
-                </tr>
-            </thead>
-        {%for i in reciennacido%}
-            <tbody>
-                <tr>
-                    <td scope"col">{{i.nombre}} </td>
-                    <td scope"col">{{i.paterno}} {{i.materno}} </td>
-                    <td scope"col">{{i.fecha_nacimiento}} </td>
-                    <td scope"col">{{i.direccion}} </td>
-                    <td scope"col">{{i.alta}} </td>
-                    
-                    {% for j in i.padres.all%}
-                        
-                    <td scope"col">{{j.first_name}} {{j.last_name}} </td>
-                    {% endfor %}
-                        
-        {% endfor %}
-            </tbody>
-        </table>
-    </div>
 {%endblock %}

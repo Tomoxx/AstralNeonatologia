@@ -22,6 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.inicio, name="inicio"),
     path('evoluciones/', views.evoluciones, name="evoluciones"),
+    path('reciennacidos/', views.reciennacidos, name="reciennacidos"),
     path('login/', views.user_login, name="user-login"),
     path('logout/', auth_views.LogoutView.as_view(template_name='core/logout.html'), name="user-logout"),
 ]
