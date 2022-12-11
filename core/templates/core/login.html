@@ -5,34 +5,47 @@ Iniciar Sesion
 {%endblock%}
 
 {%block content%}
-<div class="container">
-  <form action="{% url 'user-login' %}" method="post">
-      {% csrf_token %}
-      <div class="col-md-8 col-md-offset-2">
-          <div class="panel panel-default">
-              <div class="panel-heading">Login</div>
-              <div class="panel-body">
-                  {% if error_message %}
-                      <p class="bg-danger p-d ml-b">{{ error_message }}</p>
-                  {% endif %}
-                  <div class="form-group clearfix">
-                      <label for="username" class="col-md-4 control-label text-right">Username:</label>
-                      <div class="col-md-6">
-                          <input name="username" value="" type="text" class="form-control" />
-                      </div>
-                  </div>
-                  <div class="form-group clearfix">
-                      <label for="password" class="col-md-4 control-label text-right">Password:</label>
-                      <div class="col-md-6">
-                          <input name="password" type="password" class="form-control" />
-                      </div>
-                  </div>
-                  <div class="col-md-6 col-md-offset-4">
-                      <input name="login" type="submit" value="Login" class="btn btn-success" /> &nbsp;
-                  </div>
-              </div>
-          </div>
-      </div>
-  </form>
+<div class="containter-fluid">
+    <div class="row">
+
+        <form action="{% url 'user-login' %}" method="post">
+            {% csrf_token %}
+            <div class="col col-md-offset-2" style="margin-left:50vh; text-align: center;">
+                <br><br><br>
+                <h2 style="background-color: #1b4d89;color: white; font-family: Arial, Helvetica, sans-serif;" > Inicio de sesión</h2>
+                <br>
+                <div class="panel panel-default">
+                    <div class="panel-heading"></div>
+                    <div class="panel-body">
+                        {% if error_message %}
+                        <p class="bg-danger p-d ml-b">{{ error_message }}</p>
+                        {% endif %}
+                        <div class="input-group mb-6">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-default"
+                                    style="font-family: Arial, Helvetica, sans-serif;">Nombre de usuario</span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="" aria-label=""
+                                aria-describedby="basic-addon1" name="username" value="">
+                        </div>
+                        <br>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-default"
+                                    style="font-family: Arial, Helvetica, sans-serif;">Contraseña</span>
+                            </div>
+                            <input type="password" class="form-control" placeholder="" aria-label="" name="password"
+                                value="" aria-describedby="basic-addon1">
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-md-offset-4">
+                        <input name="login" type="submit" value="Login"
+                            style="font-family: Arial, Helvetica, sans-serif;" class="btn btn-outline-dark" />
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+</form>
 </div>
 {%endblock %}

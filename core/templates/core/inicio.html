@@ -6,33 +6,65 @@ Inicio
 
 {%block content%}
 {% comment %} Pagina de inicio a la que uno ira despues de iniciar sesión {% endcomment %}
-<div class="containter-fluid">
+<div class="containter-fluid" style="margin-left: 10vh;;" >
+  <br><br>
     <div class="row">
-        <div class="col-md-4">
-
+      <div class="col-4">
+        <figure class="figure">
+          <img src="{%static 'core/img/hospital.jpg'%}" class="figure-img img-fluid rounded" alt="..." width="500px" height="500px">
+        </figure>
+      </div>
+      <div class="col-4">
+        <figure class="figure">
+          <img src="{%static 'core/img/bbs.jpg'%}" class="figure-img img-fluid rounded" alt="..." width="500px" height="500px">
+        </figure>
         </div>
-        <div class="col-md-4">
-            <br><br><br>
-            <h1>ESTE DEBE SER EL INICIO, BIENVENIDO PADRE QUE ACABA DE LOGGEAR O QUIEN SEA</h1>
-            <br>
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="inputGroup-sizing-default" style="font-family: Arial, Helvetica, sans-serif;">Nombre de usuario</span>
-                </div>
-                <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" >
-              </div>
-              <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default" style="font-family: Arial, Helvetica, sans-serif;">Contraseña</span>
-                </div>
-                <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
-              </div>
-              <button type="button" class="btn btn-outline-dark"><a href="" style="font-family: arial; color: black; ">Iniciar</a>  </button>
-              </div>
-        </div>
-        <div class="col-md-3">
-
-        </div>
+      <div class="col-4">
+        <figure class="figure">
+          <img src="{%static 'core/img/doc.jpg'%}" class="figure-img img-fluid rounded" alt="..." width="500px" height="500px">
+        </figure>
+      </div>
+      <br><br><br>
     </div>
+    <br><br><br>
+    <div class="container-fluid">
+    <div class="row">
+      
+      <div class="col-mb-4">
+        <div class="card" style="width: 18rem;">
+          <img src="{%static 'core/img/OIP.jpg'%}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Ver Recien Nacido</h5>
+            <p class="card-text"></p>
+            <a href='{% url 'evoluciones'%}' class="btn btn-primary">Ir</a>
+          </div>
+        </div>
+
+      </div>
+      {% if user.is_staff%}
+      <div class="col-mb-4">
+        <div class="card" style="width: 18rem;">
+          <img src="{%static 'core/img/bb.jpg'%}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Registrar evolucion recien nacido</h5>
+            <p class="card-text"></p>
+            <a href='{% url 'admin:core_evolucion_add'%}' class="btn btn-primary">Ir</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-mb-4">
+        <div class="card" style="width: 18rem;">
+          <img src="{%static 'core/img/mendoza.jpg'%}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Registrar Hospitalización recien nacido</h5>
+            <p class="card-text"></p>
+            <a href="{% url 'admin:core_reciennacido_add'%}" class="btn btn-primary">Ir</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  {%endif%}
+
+</div>
 </div>
 {%endblock %}
