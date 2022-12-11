@@ -7,11 +7,11 @@ from .models import Evolucion
 
 # Create your views here.
 def inicio(request):
-    return render(request,'core/inicio.html')
+    user = request.user
+    return render(request,'core/inicio.html', {'user': user})
 
 @login_required(login_url='user-login')
 def evoluciones(request): # Evoluciones muestra las evoluciones de todos los recien nacidos segun el usuario logeado (Si es staff, puede verlos todos)
-    user = request.user
     evolucion = Evolucion.objects.filter()
     reciennacido = RecienNacido.objects.filter()
     padres = RecienNacido.padres
