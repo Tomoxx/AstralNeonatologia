@@ -10,7 +10,7 @@ def inicio(request):
     return render(request,'core/inicio.html')
 
 @login_required(login_url='user-login')
-def evoluciones(request):
+def evoluciones(request): # Evoluciones muestra las evoluciones de todos los recien nacidos segun el usuario logeado (Si es staff, puede verlos todos)
     user = request.user
     evolucion = Evolucion.objects.filter()
     reciennacido = RecienNacido.objects.filter()
@@ -21,14 +21,15 @@ def evoluciones(request):
 
 @login_required(login_url='user-login')
 @permission_required('core.view_reciennacido',login_url='user-login')
-def reciennacidos(request):
+def reciennacidos(request): # Reciennacidos solo se ve si se esta logeado y se tiene el permiso apropiado (Matronas)
+    user = request.user
     reciennacido = RecienNacido.objects.filter()
     padres = RecienNacido.padres
 
 
-    return render(request,'core/reciennacidos.html', {'reciennacido': reciennacido, 'padres': padres})
+    return render(request,'core/reciennacidos.html', {'reciennacido': reciennacido, 'padres': padres, 'user': user})
 
-def user_login(request):
+def user_login(request): # Pagina de loggeo
     if request.method == 'POST':
         # Process the request if posted data are available
         username = request.POST['username']

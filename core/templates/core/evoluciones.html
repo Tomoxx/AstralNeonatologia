@@ -1,7 +1,7 @@
 {% extends 'core/base.html' %}
 {%load static%}
 {%block title%}
-Evoluciones
+Recien Nacidos
 {%endblock%}
 
 {%block content%}
@@ -34,6 +34,10 @@ Evoluciones
             </thead>
         {%for i in evolucion%}
             <tbody>
+                
+                {% if  user in i.recienNacido.padres.all or user.is_staff%}
+                    
+                
                 <tr>
                     <td scope"col">{{i.recienNacido}} </td>
                     <td scope"col">{{i.fecha}} </td>
@@ -52,6 +56,7 @@ Evoluciones
                     <td scope"col">{{i.cama.sector}} </td>
                     <td scope"col">{{i.cama}} </td>
                     <td scope"col">{{i.matrona.first_name}} {{i.matrona.last_name}} </td>
+                {% endif %}
                     
         {% endfor %}
             </tbody>
