@@ -12,7 +12,7 @@ def inicio(request):
 
 @login_required(login_url='user-login')
 def evoluciones(request): # Evoluciones muestra las evoluciones de todos los recien nacidos segun el usuario logeado (Si es staff, puede verlos todos)
-    evolucion = Evolucion.objects.filter()
+    evolucion = Evolucion.objects.filter().order_by("fecha")
     reciennacido = RecienNacido.objects.filter()
     padres = RecienNacido.padres
 
@@ -23,7 +23,7 @@ def evoluciones(request): # Evoluciones muestra las evoluciones de todos los rec
 @permission_required('core.view_reciennacido',login_url='user-login')
 def reciennacidos(request): # Reciennacidos solo se ve si se esta logeado y se tiene el permiso apropiado (Matronas)
     user = request.user
-    reciennacido = RecienNacido.objects.filter()
+    reciennacido = RecienNacido.objects.filter().order_by("nombre")
     padres = RecienNacido.padres
 
 

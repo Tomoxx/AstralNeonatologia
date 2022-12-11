@@ -6,7 +6,21 @@ Sesion Cerrada
 
 {%block content%}
 {% comment %} Literalmente una pagina para desloggear al usuario {% endcomment %}
-Logout
 
-<a href="{% url 'user-login' %}" style="font-family: Arial, Helvetica, sans-serif;">Login</a>
+
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-4">
+
+        </div>
+        <div class="col-4">
+            <br><br>
+            <h3 style="font-family: Arial, Helvetica, sans-serif;">Su sesión ha finalizado, para iniciar nuevamente haga click aquí</h3>
+            <h3><a href="{% url 'user-login' %}" style="font-family: Arial, Helvetica, sans-serif;">Iniciar</a></h3>
+        </div>
+    </div>
+</div>
+
+
 {%endblock %}
