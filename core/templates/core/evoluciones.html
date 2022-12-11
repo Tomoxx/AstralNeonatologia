@@ -1,7 +1,7 @@
 {% extends 'core/base.html' %}
 {%load static%}
 {%block title%}
-Correspondencia
+Evoluciones
 {%endblock%}
 
 {%block content%}
@@ -20,9 +20,49 @@ Correspondencia
         <table class="table table-bordered border-primary" >
             <thead>
                 <tr>
+                    <th scope="col">Recien Nacido</th>
+                    <th scope="col">Fecha</th> 
+                    <th scope="col">Peso</th>
+                    <th scope="col">Orina</th>
+                    <th scope="col">Deposicion</th>
+                    <th scope="col">Tolerancia</th>
+                    <th scope="col">Sector</th>
+                    <th scope="col">Cama</th>
+                    <th scope="col">Matrona</th>
+                    
+                </tr>
+            </thead>
+        {%for i in evolucion%}
+            <tbody>
+                <tr>
+                    <td scope"col">{{i.recienNacido}} </td>
+                    <td scope"col">{{i.fecha}} </td>
+                    <td scope"col">{{i.peso}} </td>
+                    {% if  i.orina %}
+                    <td scope"col">Sí</td>
+                    {% else %}
+                    <td scope"col">No</td>
+                    {% endif %}
+                    {% if  i.deposicion %}
+                    <td scope"col">Sí</td>
+                    {% else %}
+                    <td scope"col">No</td>
+                    {% endif %}
+                    <td scope"col">{{i.tolerancia}} </td>
+                    <td scope"col">{{i.cama.sector}} </td>
+                    <td scope"col">{{i.cama}} </td>
+                    <td scope"col">{{i.matrona.first_name}} {{i.matrona.last_name}} </td>
+                    
+        {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="col-md-8">
+        <table class="table table-bordered border-primary" >
+            <thead>
+                <tr>
                     <th scope="col">Nombre</th> 
-                    <th scope="col">Paterno</th>
-                    <th scope="col">Materno</th>
+                    <th scope="col">Apellidos</th>
                     <th scope="col">Fecha Nacimiento</th>
                     <th scope="col">Dirección</th>
                     <th scope="col">Estado de alta</th>
@@ -34,12 +74,16 @@ Correspondencia
             <tbody>
                 <tr>
                     <td scope"col">{{i.nombre}} </td>
-                    <td scope"col">{{i.paterno}} </td>
-                    <td scope"col">{{i.materno}} </td>
+                    <td scope"col">{{i.paterno}} {{i.materno}} </td>
                     <td scope"col">{{i.fecha_nacimiento}} </td>
                     <td scope"col">{{i.direccion}} </td>
                     <td scope"col">{{i.alta}} </td>
-                    <td scope"col">{{i.padres}} </td>
+                    
+                    {% for j in i.padres.all%}
+                        
+                    <td scope"col">{{j.first_name}} {{j.last_name}} </td>
+                    {% endfor %}
+                        
         {% endfor %}
             </tbody>
         </table>

@@ -1,0 +1,12 @@
+{% extends 'core/base.html' %}
+{%load static%}
+{%block title%}
+Sesion Cerrada
+{%endblock%}
+
+{%block content%}
+{% comment %} Literalmente una pagina para desloggear al usuario {% endcomment %}
+Logout
+
+<a href="{% url 'user-login' %}">Login</a>
+{%endblock %}
