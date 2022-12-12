@@ -7,12 +7,13 @@ body {
     }
 
 .inicio{
+    background-image:url("/static/core/img/hospital.jpg"); 
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     background-color: white;
     width: 100vw;
-    height: 100vh;;
+    height: 100vh;
 }
 
 
@@ -35,7 +36,4 @@ body {
 }
 #letra{
     font-family: Arial, Helvetica, sans-serif;
-}
-#bajo{
-    width: 500px;
 }
