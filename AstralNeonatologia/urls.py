@@ -23,6 +23,7 @@ from core.api.router import router_posts
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.inicio, name="inicio"),
+    path('mapa', views.map, name="map"),
     path('evoluciones/', views.evoluciones, name="evoluciones"),
     path('reciennacidos/', views.reciennacidos, name="reciennacidos"),
     path('login/', views.user_login, name="user-login"),

@@ -9,6 +9,9 @@ from .models import Evolucion
 def inicio(request):
     user = request.user
     return render(request,'core/inicio.html', {'user': user})
+def map(request):
+    user = request.user
+    return render(request,'core/map.html', {'user': user})
 
 @login_required(login_url='user-login')
 def evoluciones(request): # Evoluciones muestra las evoluciones de todos los recien nacidos segun el usuario logeado (Si es staff, puede verlos todos)
